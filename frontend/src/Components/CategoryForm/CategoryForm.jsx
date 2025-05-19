@@ -23,12 +23,12 @@ function CategoryForm() {
 
       const onSubmitHandler=async (e)=>{
             e.preventDefault();
-            setLoading(true);
             if(!image){
                   toast.error("Please upload an image");
                   setLoading(false);
                   return;
             }
+            setLoading(true);
             const formData = new FormData();
             formData.append("category", JSON.stringify(data));
             formData.append("file", image);
