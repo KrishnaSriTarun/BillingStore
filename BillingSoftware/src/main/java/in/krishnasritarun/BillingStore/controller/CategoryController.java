@@ -18,7 +18,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoryController {
 
-
     private  final CategoryService categoryService;
 
     @PostMapping("/admin/category")
@@ -36,7 +35,7 @@ public class CategoryController {
 
     }
 
-    @GetMapping
+    @GetMapping("/categories")
     public List<CategoryResponse> fetchCategories(){
 
         return categoryService.read();
