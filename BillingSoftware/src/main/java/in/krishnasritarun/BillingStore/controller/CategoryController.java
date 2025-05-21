@@ -20,7 +20,7 @@ public class CategoryController {
 
     private  final CategoryService categoryService;
 
-    @PostMapping("/admin/category")
+    @PostMapping("/admin/categories")
     @ResponseStatus(HttpStatus.CREATED)
     public CategoryResponse addCategory(@RequestPart("category") String categoryString,
                                         @RequestPart("file") MultipartFile file){
