@@ -1,0 +1,138 @@
+
+.category-list-container {
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 10px;
+}
+.search-container {
+      margin-bottom: 20px;
+}
+
+.search-input {
+      border-radius: 8px 0 0 8px;
+      padding: 10px 15px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: border-color 0.2s;
+}
+
+.search-input:focus {
+      border-color: #4169E1;
+      box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.2);
+      outline: none;
+}
+
+.search-button {
+      background: linear-gradient(45deg, #8A2BE2, #4169E1);
+      color: white;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      padding: 0 15px;
+}
+
+/* User card styling */
+.user-card {
+      border: none;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      background-color: #f3f4f6;
+      /* Changed background color as requested */
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.user-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* User avatar */
+.user-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      transition: transform 0.2s;
+}
+
+.user-card:hover .user-avatar {
+      transform: scale(1.05);
+}
+
+/* User information */
+.user-info {
+      flex: 1;
+}
+
+.user-name {
+      margin-bottom: 4px;
+      font-weight: 600;
+      color: #1F2937;
+}
+
+.user-email {
+      display: flex;
+      align-items: center;
+      color: #6B7280;
+      font-size: 14px;
+}
+
+/* Role badge */
+.role-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      background-color: rgba(209, 213, 219, 0.5);
+      color: #374151;
+}
+
+/* Delete button */
+.delete-button {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: none;
+      background-color: rgba(239, 68, 68, 0.1);
+      color: #EF4444;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.delete-button:hover {
+      background-color: #EF4444;
+      color: white;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 576px) {
+      .user-avatar {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            margin-right: 12px;
+      }
+
+      .user-name {
+            font-size: 16px;
+      }
+
+      .user-email {
+            font-size: 12px;
+      }
+
+      .delete-button {
+            width: 36px;
+            height: 36px;
+      }
+}

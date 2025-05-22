@@ -30,9 +30,8 @@ public class CategoryController {
             request = objectMapper.readValue(categoryString, CategoryRequest.class);
             return categoryService.add(request,file);
         } catch (JsonProcessingException e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Exception occured while passing the json"+ e.getMessage());
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Exception occured while passing the json" + e.getMessage());
         }
-
     }
 
     @GetMapping("/categories")
