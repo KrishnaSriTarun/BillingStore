@@ -23,7 +23,7 @@
 }
 
 .search-button {
-      background: linear-gradient(45deg, #8A2BE2, #4169E1);
+      background: linear-gradient(45deg, #e6b61b, #e4c008);
       color: white;
       border: none;
       border-radius: 0 8px 8px 0;
@@ -34,7 +34,7 @@
 .user-card {
       border: none;
       border-radius: 16px;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
       background-color: #f3f4f6;
       /* Changed background color as requested */
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);

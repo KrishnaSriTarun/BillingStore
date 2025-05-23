@@ -9,8 +9,6 @@ function UserList({ users, setUsers }) {
       const filtredUsers = users.filter(user =>
             user.name.toLowerCase().includes(searchUser.toLowerCase())
       );
-
-      // Function to get user initials
       const getUserInitials = (name) => {
             return name
                   .split(' ')
@@ -18,16 +16,14 @@ function UserList({ users, setUsers }) {
                   .join('')
                   .toUpperCase();
       };
-
-      // Function to get a consistent color based on user name
       const getUserColor = (name) => {
             const colors = [
-                  "rgba(79, 70, 229, 0.9)", 
-                  "rgba(16, 185, 129, 0.9)", 
-                  "rgba(245, 158, 11, 0.9)", 
-                  "rgba(239, 68, 68, 0.9)",  
-                  "rgba(59, 130, 246, 0.9)", 
-                  "rgba(236, 72, 153, 0.9)"  
+                  "rgba(79, 70, 229, 0.9)",
+                  "rgba(16, 185, 129, 0.9)",
+                  "rgba(245, 158, 11, 0.9)",
+                  "rgba(239, 68, 68, 0.9)",
+                  "rgba(59, 130, 246, 0.9)",
+                  "rgba(236, 72, 153, 0.9)"
             ];
 
             const charSum = name.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
@@ -61,8 +57,7 @@ function UserList({ users, setUsers }) {
 
       return (
             <div className="category-list-container">
-                  {/* Search Input */}
-                  <div className="row pe-2 mb-4">
+                  <div className="row pe-2 mb-2">
                         <div className="col-12">
                               <div className="input-group search-container">
                                     <input
@@ -74,21 +69,18 @@ function UserList({ users, setUsers }) {
                                           onChange={(e) => setSearchUser(e.target.value)}
                                           value={searchUser}
                                     />
-                                    <span className="input-group-text search-button">
+                                    <span className="btn btn-warning ">
                                           <i className="bi bi-search"></i>
                                     </span>
                               </div>
                         </div>
                   </div>
-
-                  {/* User Cards */}
                   <div className="row g-3 pe-2">
                         {filtredUsers.map((user, index) => (
                               <div key={index} className="col-12">
                                     <div className="user-card">
-                                          <div className="card-body p-4">
+                                          <div className="card-body p-3">
                                                 <div className="d-flex align-items-center">
-                                                      {/* Avatar */}
                                                       <div
                                                             className="user-avatar"
                                                             style={{
@@ -98,8 +90,6 @@ function UserList({ users, setUsers }) {
                                                       >
                                                             {getUserInitials(user.name)}
                                                       </div>
-
-                                                      {/* User Information */}
                                                       <div className="user-info">
                                                             <h5 className="user-name">
                                                                   {user.name}
@@ -108,8 +98,6 @@ function UserList({ users, setUsers }) {
                                                                   <i className="bi bi-envelope me-2"></i>
                                                                   <span>{user.email}</span>
                                                             </div>
-
-                                                            {/* Role Badge */}
                                                             {user.role && (
                                                                   <div className="mt-2">
                                                                         <span className="role-badge">
@@ -118,12 +106,9 @@ function UserList({ users, setUsers }) {
                                                                   </div>
                                                             )}
                                                       </div>
-
-                                                      {/* Delete Button */}
                                                       <button
                                                             className="delete-button"
-                                                            onClick={() => deleteByUserId(user.userId, user.role)}
-                                                      >
+                                                            onClick={() => deleteByUserId(user.userId, user.role)}>
                                                             <i className="bi bi-trash"></i>
                                                       </button>
                                                 </div>
