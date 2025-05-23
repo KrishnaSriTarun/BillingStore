@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './MenuBar.css';
 import { assets } from '../../assets/Assets';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AppContext } from '../../Context/AppContext';
 const MenuBar = () => {
+      const navigate = useNavigate();
+      const { setAuthData } = useContext(AppContext)
+      const logout = () => {
+            localStorage.removeItem('token');
+            localStorage.removeItem('role');
+            setAuthData(null, null)
+            navigate("/login")
+      }
+
       return (
             <div>
                   <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-2">
@@ -52,7 +62,27 @@ const MenuBar = () => {
                                           </Link>
                                     </li>
                               </ul>
-                              {/* Add Dropdown for more options */}
+                              <ul className="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                                    <li className="nav-item dropdown">
+                                          <a href="#" className="nav-link dropdown-toggle" id="navbarDropdown" role='button' data-bs-toggle="dropdown" aria-expanded="false">
+                                                <img src={assets.profile} className=' rounded-pill' alt="" height={32} width={32} />
+                                          </a>
+                                          <ul className="dropdown-menu dropdown-menu-end" aria-labelledby='navbarDropdown'>
+                                                <li>
+                                                      <a href="#" className='dropdown-item'>Settings</a>
+                                                </li>
+                                                <li>
+                                                      <a href="#" className='dropdown-item'>Activity</a>
+                                                </li>
+                                                <li>
+                                                      <hr className='dropdown-divider' />
+                                                </li>
+                                                <li>
+                                                      <a href="#" className='dropdown-item' onClick={logout}>Logout</a>
+                                                </li>
+                                          </ul>
+                                    </li>
+                              </ul>
                         </div>
                   </nav>
             </div>

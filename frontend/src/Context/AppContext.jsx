@@ -6,13 +6,16 @@ export const AppContext =createContext(null);
 export const AppContextProvider = (props) => {
       const [categories, setCategories] = useState([]);
       const [items, setItems] = useState([]);
-      const [auth, setAuth] = useState({
-            token: null,
-            role: null
-      });
+      const [auth, setAuth] = useState({token: null,role: null});
 
       useEffect(() => {
             async function loadData() {
+                  if(localStorage.getItem("token")&& localStorage.getItem("role")){
+                        setAuthData(
+                              localStorage.getItem("token"),
+                              localStorage.getItem("role")
+                        );
+                  }
                   const response = await fetchCategories();
                   const itemResponse =await fetchItems();
                   setCategories(response.data);
