@@ -20,7 +20,7 @@ function Explore() {
                         </div>
                         <hr className="horizontal-line"/>
                         <div className="second-row"style={{overflowY:'auto'}}>
-                              <DisplayItems/>
+                              <DisplayItems selectedCategory={selectedCategory}/>
                         </div>
                   </div>
                   <div className="right-column d-flex flex-column">
