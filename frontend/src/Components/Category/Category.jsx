@@ -1,16 +1,33 @@
 import './Category.css';
-function Category({categoryName,imgUrl,numberOfItems,bgColor,isSelected,onClick}) {
+
+function Category({categoryName, imgUrl, numberOfItems, bgColor, isSelected, onClick}) {
       return (
-            <div className="d-flex align-items-center p-3 gap-1 position-relative category-hover rounded" 
-            style={{backgroundColor:bgColor,cursor:'pointer'}} onClick={onClick}>
-                  <div style={{position:'relative',marginRight:'15px'}}>
+            <div 
+                  className={`category-card ${isSelected ? 'category-selected' : ''}`}
+                  style={{
+                        background: isSelected 
+                              ? `linear-gradient(135deg, ${bgColor}ee, ${bgColor}cc)` 
+                              : `linear-gradient(135deg, ${bgColor}dd, ${bgColor}aa)`,
+                  }} 
+                  onClick={onClick}
+            >
+                  <div className="category-image-container">
                         <img src={imgUrl} alt={categoryName} className="category-image" />
+                        <div className="image-overlay"></div>
                   </div>
-                  <div>
-                        <h6 className="text-white mb-0">{categoryName}</h6>
-                        <p className="text-white mb-0">{numberOfItems} Items</p>
+                  
+                  <div className="category-content">
+                        <h6 className="category-name">{categoryName}</h6>
+                        <p className="category-count">{numberOfItems} Items</p>
                   </div>
-                  {isSelected && <div className='active-category'></div>}
+                  
+                  {isSelected && (
+                        <div className="selection-indicator">
+                              <div className="selection-dot"></div>
+                        </div>
+                  )}
+                  
+                  <div className="category-glow"></div>
             </div>
       );
 }

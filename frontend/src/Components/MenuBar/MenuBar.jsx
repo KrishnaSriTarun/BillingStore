@@ -18,7 +18,7 @@ const MenuBar = () => {
                   <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-2">
                         <a className="navbar-brand" href="#">
                               <img
-                                    src={assets.logo}
+                                    src={assets.logo} 
                                     alt="Logo"
                                     height="40"
                               />
