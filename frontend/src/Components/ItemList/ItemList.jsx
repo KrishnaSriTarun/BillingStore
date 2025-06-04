@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { AppContext } from "../../Context/AppContext";
 import { deleteItem } from "../../Service/ItemService";
 import toast from "react-hot-toast";
-import "./ItemList.css";
+import "./itemList.css";
 
 function ItemList() {
       const { items, setItems, categories, setCategories } = useContext(AppContext);
@@ -72,14 +72,7 @@ function ItemList() {
                   <div className="row g-3 pe-2">
                         {filteredItems.map((item, index) => (
                               <div className="col-12" key={index}>
-                                    <div
-                                          className="card p-3"
-                                          style={{
-                                                backgroundColor: getCardColor(index),
-                                                border: 'none',
-                                                borderRadius: '10px'
-                                          }}
-                                    >
+                                    <div className="card p-3" style={{backgroundColor: getCardColor(index),border: 'none',borderRadius: '10px'}}>
                                           <div className="d-flex align-items-center">
                                                 <div style={{ marginRight: '15px' }}>
                                                       <img src={item.imgUrl} alt={item.name} className="item-image" />
