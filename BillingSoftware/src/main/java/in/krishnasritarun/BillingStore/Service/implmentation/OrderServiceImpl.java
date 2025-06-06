@@ -27,6 +27,9 @@ public class OrderServiceImpl implements OrderService {
                 PaymentDetails.PaymentStatus.PENDING);
         newOrder.setPaymentDetails(paymentDetails);
 
+        if (request.getItems() == null || request.getItems().isEmpty()) {
+            throw new IllegalArgumentException("Order must contain at least one item.");
+        }
         List<OrderItemEntity> orderItem= request.getItems().stream()
                 .map(this::convertToOrderItemEntity)
                 .collect(Collectors.toList());
