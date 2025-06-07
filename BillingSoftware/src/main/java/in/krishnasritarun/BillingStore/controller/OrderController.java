@@ -19,7 +19,6 @@ public class OrderController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public OrderResponse creteOrder(@RequestBody OrderRequest request){
-        System.out.println(request);
         return orderService.createOrder(request);
 
     }
