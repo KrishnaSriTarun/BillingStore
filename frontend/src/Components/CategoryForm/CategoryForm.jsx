@@ -70,7 +70,7 @@ function CategoryForm() {
                                                       <label htmlFor="name" className="form-label">Name</label>
                                                       <input type="text" name="name" id="name" 
                                                       className="form-control" placeholder="Category Name" 
-                                                      onChange={onChangeHandler} value={data.name}/>
+                                                      onChange={onChangeHandler} value={data.name} required/>
                                                 </div>
                                                 <div className="mb-3">
                                                       <label htmlFor="description" className="form-label">Description</label>
@@ -82,7 +82,8 @@ function CategoryForm() {
                                                       <label htmlFor="bgColor" className="form-label">Background Color</label> <br />
                                                       <input type="color" name="bgColor" 
                                                       id="bgColor" placeholder="#ffffff" 
-                                                      onChange={onChangeHandler} value={data.bgColor}/>
+                                                      onChange={onChangeHandler} value={data.bgColor}
+                                                      />
                                                 </div>
                                                 <button type="submit" disabled={loading}
                                                 className="btn btn-warning w-100">{loading ? "Loading": "Submit"}</button>

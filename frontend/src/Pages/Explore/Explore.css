@@ -5,7 +5,10 @@
       padding: 20px;
       box-sizing: border-box;
       background-color: #2c3335;
+      flex-wrap: wrap;
 }
+
+/* Left column styling */
 .left-column {
       flex: 0.7;
       border: 1px solid #ccc;
@@ -15,21 +18,31 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      min-width: 280px;
 }
-.first-row{
+
+/* First row inside left column */
+.first-row {
       flex: 0.3;
       box-sizing: border-box;
-
+      overflow-y: auto;
 }
-.horizontal-line{
+
+/* Horizontal line */
+.horizontal-line {
       margin: 20px 0;
       border: 0;
       border-top: 1px solid #cccccc;
 }
-.second-row{
+
+/* Second row inside left column */
+.second-row {
       flex: 0.7;
       box-sizing: border-box;
+      overflow-y: auto;
 }
+
+/* Right column styling */
 .right-column {
       flex: 0.3;
       border: 1px solid #ccc;
@@ -39,13 +52,81 @@
       height: 100%;
       display: flex;
       flex-direction: column;
+      min-width: 280px;
 }
-.cart-summary-container{
+
+/* Customer form container */
+.customer-form-container {
+      height: 15%;
+}
+
+/* Cart items container */
+.cart-items-container {
+      height: 48%;
+      overflow-y: auto;
+}
+
+/* Cart summary container */
+.cart-summary-container {
       flex: 0.3;
       border-top: 1px solid #ccc;
+      height: 37%;
 }
-.cart-item{
+
+/* Cart item style */
+.cart-item {
       background-color: #2c2c2c;
       padding: 12px;
       border-radius: 8px;
+}
+
+/* Responsive: On screens <= 992px (tablet and mobile) */
+@media (max-width: 992px) {
+      .explore-container {
+            flex-direction: column;
+            height: auto; /* Let content grow naturally */
+            padding: 10px;
+      }
+
+      .left-column,
+      .right-column {
+            flex: 1 1 100%;
+            width: 100%;
+            height: auto; /* Remove fixed heights */
+            margin-bottom: 16px;
+      }
+
+      .left-column {
+            min-width: auto;
+      }
+
+      .right-column {
+            min-width: auto;
+      }
+
+      .first-row {
+            flex: none;
+            max-height: 200px; /* limit height for category list */
+      }
+
+      .second-row {
+            flex: none;
+            max-height: 300px; /* limit height for item display */
+      }
+
+      .customer-form-container {
+            height: auto;
+            margin-bottom: 16px;
+      }
+
+      .cart-items-container {
+            height: 200px; /* fixed height scroll */
+            overflow-y: auto;
+      }
+
+      .cart-summary-container {
+            height: auto;
+            border-top: none;
+            margin-top: 16px;
+      }
 }

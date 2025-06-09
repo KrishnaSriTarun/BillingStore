@@ -1,3 +1,6 @@
+/* MenuBar.css */
+
+/* General navbar styling */
 .navbar {
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -22,10 +25,74 @@
       color: #fff !important;
 }
 
+/* Form and button styling (if used) */
 .form-control {
       border-radius: 20px 0 0 20px;
 }
 
 .btn-outline-light {
       border-radius: 0 20px 20px 0;
+}
+
+/* Dropdown styling */
+.navbar-nav .dropdown-menu {
+      min-width: 180px;
+      font-size: 0.95rem;
+}
+
+.navbar-nav .dropdown-toggle img {
+      border: 2px solid #fff;
+      transition: transform 0.2s ease;
+}
+
+.navbar-nav .dropdown-toggle:hover img {
+      transform: scale(1.05);
+}
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+      .navbar-nav {
+            text-align: center;
+      }
+
+      .navbar-nav .nav-item {
+            margin-bottom: 0.5rem;
+      }
+
+      .navbar-nav .dropdown-menu {
+            position: static;
+            float: none;
+            width: 100%;
+            text-align: center;
+            background-color: #343a40;
+            border: none;
+            border-top: 1px solid #495057;
+      }
+
+      .navbar-nav .dropdown-item {
+            color: #fff;
+      }
+
+      .navbar-nav .dropdown-item:hover {
+            background-color: #495057;
+      }
+
+      .navbar-toggler {
+            margin-left: auto;
+      }
+}
+
+.mobile-user-options .nav-link {
+      padding: 0.5rem 0;
+      font-size: 1rem;
+}
+
+.mobile-user-options .btn {
+      font-weight: 500;
+}
+
+@media (min-width: 992px) {
+      .mobile-user-options {
+            display: none;
+      }
 }
